@@ -24,7 +24,7 @@ class rgrid_c(gr.sync_block):
                                out_sig=[(numpy.complex64, (1,))])
                                
         self.resource_grid = ssb.grid(n_carr, N_ID1, N_ID2, k_ssb, mu, f, shared_spectr, paired_spectr, pbch_data).flatten(order='F')#numpy.array(range(n_carr),dtype=complex)
-        numpy.save('/home/mark/ssb.npy', self.resource_grid)
+        
         self.idx = 0
         #self.set_output_multiple(n_carr)
 
