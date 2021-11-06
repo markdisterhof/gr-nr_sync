@@ -27,5 +27,6 @@ from .pss_detector_cc import pss_detector_cc
 from .sss_decode_ci import sss_decode_ci
 from .unmap_ssb_cc import unmap_ssb_cc
 from .rgrid_c import rgrid_c
+from .pss_sync_cc import pss_sync_cc
 
 #
