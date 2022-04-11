@@ -1,5 +1,5 @@
 id: nr_sync_pbch_descramble_ci
-label: Descramble PBCH 
+label: PBCH Descramble  
 category: '[nr_sync]'
 
 templates:

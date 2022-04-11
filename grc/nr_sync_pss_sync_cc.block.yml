@@ -42,8 +42,6 @@ outputs:
 - label: ssb
   dtype: complex
   vlen: 960
-- label: i_ssb
-  dtype: int
 
 #  'file_format' specifies the version of the GRC yml format used in the file
 #  and should usually not be changed.

@@ -28,5 +28,7 @@ from .sss_decode_ci import sss_decode_ci
 from .unmap_ssb_cc import unmap_ssb_cc
 from .rgrid_c import rgrid_c
 from .pss_sync_cc import pss_sync_cc
+from .dmrs_decode import dmrs_decode
+
 
 #

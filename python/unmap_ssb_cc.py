@@ -19,22 +19,18 @@ class unmap_ssb_cc(gr.sync_block):
     def __init__(self, nu):
         gr.sync_block.__init__(self,
                                name="unmap_ssb_cc",
-                               in_sig=[(numpy.complex64, 4*240),
-                                       (numpy.int32, (1,))],
+                               in_sig=[(numpy.complex64, 4*240)],
                                out_sig=[
                                    (numpy.complex64, 127),  # sss
                                    (numpy.complex64, 432),  # pbch
-                                   ((numpy.int32, (1,))),  # i_ssb
                                    (numpy.complex64, 144)])  # dmrs
         self.nu = nu
 
     def work(self, input_items, output_items):
-        in0 = input_items[0]        
-        in1 = input_items[1]
+        in0 = input_items[0]
         out0 = output_items[0]
         out1 = output_items[1]
         out2 = output_items[2]
-        out3 = output_items[3]
 
         for i in range(len(in0)):
             grid = numpy.array(in0[i], dtype=complex).reshape(
@@ -45,6 +41,5 @@ class unmap_ssb_cc(gr.sync_block):
             pbch_data, dmrs_data = ssb.unmap_pbch(grid, self.nu)
             out0[i] = sss_data
             out1[i] = pbch_data
-            out2[i] = in1[i]
-            out3[i] = dmrs_data
+            out2[i] = dmrs_data
         return len(out0)

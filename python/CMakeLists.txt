@@ -28,7 +28,8 @@ GR_PYTHON_INSTALL(
     sss_decode_ci.py
     unmap_ssb_cc.py
     rgrid_c.py
-    pss_sync_cc.py DESTINATION ${GR_PYTHON_DIR}/nr_sync
+    pss_sync_cc.py
+    dmrs_decode.py DESTINATION ${GR_PYTHON_DIR}/nr_sync
 )
 
 ########################################################################
@@ -44,3 +45,4 @@ GR_ADD_TEST(qa_sss_decode_ci ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa
 GR_ADD_TEST(qa_unmap_ssb_cc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_unmap_ssb_cc.py)
 GR_ADD_TEST(qa_rgrid_c ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_rgrid_c.py)
 GR_ADD_TEST(qa_pss_sync_cc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_pss_sync_cc.py)
+GR_ADD_TEST(qa_dmrs_decode ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_dmrs_decode.py)
