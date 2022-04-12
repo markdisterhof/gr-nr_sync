@@ -39,7 +39,7 @@ class pss_sync_cc(gr.basic_block):
         self.memory = numpy.concatenate((self.memory, in0.flatten().copy()))
         self.consume_each(len(in0))
 
-        if len(self.memory) >= self.fft_size*4 and not len(self.ssb) == self.ssb.maxlen:
+        if len(self.memory) >= self.fft_size*10 and not len(self.ssb) == self.ssb.maxlen:
             grids, nids, proc_samples, _ = decode.sync_pss(received_data= self.memory,fft_size= self.fft_size, threshold= self.threshold,pss_candidates= self.can_pss_t)
             self.memory = self.memory[proc_samples:]
             for i in range(len(grids)):

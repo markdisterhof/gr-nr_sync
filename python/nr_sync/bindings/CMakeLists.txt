@@ -31,9 +31,17 @@ include(GrPybind)
 list(APPEND nr_sync_python_files
     python_bindings.cc)
 
-GR_PYBIND_MAKE_OOT(nr_sync 
-   ../..
+GR_PYBIND_MAKE_OOT(nr_sync
+   ../../..
    gr::nr_sync
    "${nr_sync_python_files}")
 
-install(TARGETS nr_sync_python DESTINATION ${GR_PYTHON_DIR}/nr_sync COMPONENT pythonapi)
+# copy in bindings .so file for use in QA test module
+add_custom_target(
+  copy_bindings_for_tests ALL
+  COMMAND
+    ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/*.so"
+    ${CMAKE_BINARY_DIR}/test_modules/gnuradio/nr_sync/
+  DEPENDS nr_sync_python)
+
+install(TARGETS nr_sync_python DESTINATION ${GR_PYTHON_DIR}/gnuradio/nr_sync COMPONENT pythonapi)

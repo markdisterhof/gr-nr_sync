@@ -20,15 +20,11 @@ except ModuleNotFoundError:
     pass
 
 # import any pure python here
-
+from .dmrs_decode import dmrs_decode
 from .nidcell_ii import nidcell_ii
 from .pbch_descramble_ci import pbch_descramble_ci
-from .pss_detector_cc import pss_detector_cc
+from .pss_sync_cc import pss_sync_cc
+from .rgrid_c import rgrid_c
 from .sss_decode_ci import sss_decode_ci
 from .unmap_ssb_cc import unmap_ssb_cc
-from .rgrid_c import rgrid_c
-from .pss_sync_cc import pss_sync_cc
-from .dmrs_decode import dmrs_decode
-
-
 #

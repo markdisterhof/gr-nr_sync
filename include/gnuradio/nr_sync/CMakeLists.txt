@@ -11,5 +11,5 @@
 ########################################################################
 install(FILES
     api.h
-    DESTINATION include/nr_sync
+    DESTINATION include/gnuradio/nr_sync
 )

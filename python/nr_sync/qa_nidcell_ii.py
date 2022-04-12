@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright 2021 Mark Disterhof.
+# Copyright 2022 Mark Disterhof.
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
 
 from gnuradio import gr, gr_unittest
 # from gnuradio import blocks
-from rgrid_c import rgrid_c
+from gnuradio.nr_sync import nidcell_ii
 
-class qa_rgrid_c(gr_unittest.TestCase):
+class qa_nidcell_ii(gr_unittest.TestCase):
 
     def setUp(self):
         self.tb = gr.top_block()
@@ -20,7 +20,7 @@ class qa_rgrid_c(gr_unittest.TestCase):
 
     def test_instance(self):
         # FIXME: Test will fail until you pass sensible arguments to the constructor
-        instance = rgrid_c()
+        instance = nidcell_ii()
 
     def test_001_descriptive_test_name(self):
         # set up fg
@@ -29,4 +29,4 @@ class qa_rgrid_c(gr_unittest.TestCase):
 
 
 if __name__ == '__main__':
-    gr_unittest.run(qa_rgrid_c)
+    gr_unittest.run(qa_nidcell_ii)
